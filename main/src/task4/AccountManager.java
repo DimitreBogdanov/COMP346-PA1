@@ -1,4 +1,4 @@
-package com.application.task3;
+package task4;
 
 /**
  * Class AccountManager

@@ -1,8 +1,8 @@
-package com.application.base;
+package task4;
 
 /**
- * Class Depositor
- * Implements Depositor thread class.
+ * Class Withdrawer
+ * Implements Withdrawer thread class.
  *
  * @author Malek Barhoush, mbarhoush@hotmail.com;
  * 
@@ -11,18 +11,20 @@ package com.application.base;
  * $Last Revision Date: 2017/01/04
  */
 
-public class Depositor extends Thread {
+public class Withdrawer extends Thread {
 	private Account account ;
-	public Depositor(Account account){
+	public Withdrawer(Account account){
 		this.account = account;
 	}
 	
 	public void run(){
+	
+		// Withdraw 10 CAD into instance variable account
 		for (int i=0;i<10000000;i++)
 		{
-			account.debosit(10);
-		/*			
- 		try {
+			account.withdraw(10);
+			/*
+			try {
 				sleep(10);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block

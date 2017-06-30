@@ -1,4 +1,4 @@
-package com.application.base;
+package task3;
 
 /**
  * Class AccountManager
@@ -15,10 +15,10 @@ public class AccountManager {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		Account [] account = new Account[10];
+		Account[] account = new Account[10];
 		Depositor [] deposit = new Depositor[10];
 		Withdrawer [] withdraw = new Withdrawer[10];
-		
+
 		// The birth of  10 accounts
 		account[0] = new Account(1234,"Mike",1000);
 		account[1] = new Account(2345,"Adam",2000);
