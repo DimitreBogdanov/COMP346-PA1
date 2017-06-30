@@ -31,7 +31,7 @@ public class Account {
 	/**
 	 * Attribute that presents an account balance
 	 */
-	private Double balance;
+	private double balance;
 	
 	/*
 	 * ------------
@@ -137,6 +137,8 @@ public class Account {
 		return "Account: "+acc+" \tName: "+name+" \tBalance:\t"+balance;
 	}
 
+    private final Object lock = new Object();
+
 	/**
 	 * A method that allows a customer to deposit money into this account
 	 * @param amount A double that represents a deposit amount
@@ -149,7 +151,7 @@ public class Account {
 		for(int i=0;i<100;i++)
 			k = k / 2;
 
-		synchronized (this){
+		synchronized (lock){
 			balance = balance + amount;
 		}
 
@@ -173,7 +175,7 @@ public class Account {
 		for(int i=0;i<100;i++)
 			k = k / 2;
 
-		synchronized (this){
+		synchronized (lock){
 			balance = balance - amount;
 		}
 
