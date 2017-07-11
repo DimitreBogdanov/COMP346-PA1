@@ -1,22 +1,47 @@
 Q1
-i)
-ii)
+i)Explain the reason why a system call must be implemented in the kernel of the operating system (i.e. in system mode).
+
+ii)Some early CPUs (e.g. INTEL 8086) did not implement a mode bit so the operating system
+and the user applications execute in the same mode of operation. Explain, if possible,
+how the system resources could be protected in such architecture.
 
 Q2
-i)
-ii)
+i)Explain how a multitasking OS protects the CPU from faulty running programs?
+<not sure> mapping memory from each process, not allowing other processes to access it?
+
+ii)Explain a problem that could occur if that CPU protection mechanism is not implemented.
+<not sure> if it is not implemented, memory from one process can be accessed by another and cause corruption
 
 Q3
-i)
-ii)
+i)Throughput is defined as the amount of work done per unit time. “The degree of multiprogramming in a
+computer system has direct influence on the throughput of the system”. Explain with an example.
+
+ii)“Multitasking (i.e. time sharing) is a type of multiprogramming that is useful for interactive systems”. Explain.
+Time sharing is useful since it allows the processor resource to be shared by many processes and threads,
+alternating between them allowing for multiple tasks to be seemingly executing at the same time.
 
 Q4
-i)
-ii)
-iii)
+i)What is the main difference between user-level threads and kernel-supported threads?
+
+ii)For a client application in a client-server system would you use user-level threads or kernel-supported threads?
+Explain.
+
+iii)For a server application in a client-server system would you use user-level threads or kernel-supported threads?
+Explain.
 
 Q5
-i)
-ii)
+i)Explain each step that is performed by the dispatcher during a context switch between two processes.
+-While the current process is running on the cpu, an interrupt triggers the context switch.
+-Memory and stack state is saved
+-Scheduler algorithm runs to determine the next process to be run by the cpu
+-The saved memory and stack state of the next process is loaded
+-The state for the new process is restored
+-Interrupt-return is performed, transferring the execution to the new process
 
-Q6
+ii)Explain what would be different (if any) if the context switch occurs between two threads of the same controlling process.
+The difference in this situation is that the resources are shared between the controlling process and its threads,
+meaning that the memory and stack state does not need to be saved and reloaded.
+
+Q6) Suppose that an operating system distinguishes the time that a process or thread is running in user mode and the
+time that code is executed in system mode on behalf of that process or thread. Modify the following
+process state diagram to reflect the user and system running modes.
