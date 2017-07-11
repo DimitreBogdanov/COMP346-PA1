@@ -1,16 +1,22 @@
 Q1
 i)Explain the reason why a system call must be implemented in the kernel of the operating system (i.e. in system mode).
+The reason why system calls need to be implemented in the kernel is because the kernel has access to the hardware
+and because the kernel runs in system mode
 
 ii)Some early CPUs (e.g. INTEL 8086) did not implement a mode bit so the operating system
 and the user applications execute in the same mode of operation. Explain, if possible,
 how the system resources could be protected in such architecture.
 
+
 Q2
 i)Explain how a multitasking OS protects the CPU from faulty running programs?
-<not sure> mapping memory from each process, not allowing other processes to access it?
+Multitasking OS protects the cpu by making sure that each running process doesn't hog the entire
+processing power. It will give each process a quantum or a time slice during which to execute,
+ensuring that all processes are allowed to run, therefor protecting the cpu and other processes
+from a single process which would potentially run indefinitely.
 
 ii)Explain a problem that could occur if that CPU protection mechanism is not implemented.
-<not sure> if it is not implemented, memory from one process can be accessed by another and cause corruption
+If such a mechanism was not implemented, a running process could go on forever.
 
 Q3
 i)Throughput is defined as the amount of work done per unit time. “The degree of multiprogramming in a
@@ -22,12 +28,19 @@ alternating between them allowing for multiple tasks to be seemingly executing a
 
 Q4
 i)What is the main difference between user-level threads and kernel-supported threads?
+The main difference between user-level threads and kernel-supported threads is that user-level threads created
+by a controlling process are not seen by the kernel, it only sees the controlling process, whereas kernel-supported
+threads can be seen by the kernel and can be directly processed by it rather than by the controlling process.
 
 ii)For a client application in a client-server system would you use user-level threads or kernel-supported threads?
 Explain.
+For a client application you would use user-level threads, allowing for a higher level of process control as well
+as minimized access to the kernel for regular tasks.
 
 iii)For a server application in a client-server system would you use user-level threads or kernel-supported threads?
 Explain.
+On a server application on the other hand, you may want to use kernel-supported thread for better optimization and
+more control over the running threads and processes.
 
 Q5
 i)Explain each step that is performed by the dispatcher during a context switch between two processes.
