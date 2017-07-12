@@ -12,6 +12,11 @@ will apply a FIFO algorithm.
 <experiment>
 The consistency is preserved regardless of the order in which threads are run.
 
+Miq: The Thread Scheduler determines the start order of the threads at an unpredicatable random order. A thread is started
+upon the invocation of the `.start()` method on the given thread. Upon start, the thread is in a Runnable state, it waits for
+the thread scheduler to pick it up. It's status then becomes as Running until an I/O block or end of the thread. A thread
+when in a Non-runnable state means that it is alive but not eligible to run.
+
 Task 3: Method level synchronization
 See code
 
