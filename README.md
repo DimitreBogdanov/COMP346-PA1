@@ -2,8 +2,8 @@ COMP 346 - Practical Assignment
 Due: July 13th, 2017
 
 Team:
-Dimitre Bogdanov: 4000 4252
-Miqdad Amirali: 4000 4201
+- Dimitre Bogdanov
+- Miqdad Amirali
 
 Solution.docx: Has the solution to the tasks.
 Code solutions are within the make method:
